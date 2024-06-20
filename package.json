@@ -1,0 +1,34 @@
+{
+  "name": "yarn-restart",
+  "displayName": "Yarn Restart",
+  "description": "Stops anything already running in terminal, then runs 'yarn start'",
+  "version": "0.0.1",
+  "publisher": "Mike Lyons",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [
+    "onCommand:yarn-restart.run"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "yarn-restart.run",
+        "title": "Restart Yarn"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc --outDir out/ -p ./",
+    "watch": "tsc --outDir out/ -watch -p ./",
+    "package": "yarn compile && vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4",
+    "@vscode/vsce": "^2.29.0"
+  }
+}
